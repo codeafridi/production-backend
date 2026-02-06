@@ -71,18 +71,18 @@ docker compose down or docker compose stop
 ```
 
 ## API Endpoints
-###Signup
+### Signup
 
 POST /auth/signup
 
-##Body:
+### Body:
 ```bash
 {
   "email": "user@example.com",
   "password": "password123"
 }
 ```   
-##Login
+## Login
 
 POST /auth/login
 
@@ -93,13 +93,13 @@ Response:
 }
 ```
 
-##Protected Route
+## Protected Route
 GET /me
 
-##Header:
+## Header:
 Authorization: Bearer <JWT_TOKEN>
 
-##⏱️ Rate Limiting
+## ⏱️ Rate Limiting
 
 100 requests per user per 15 minutes
 Applied to protected routes
