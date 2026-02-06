@@ -61,11 +61,11 @@ See `.env.example` for reference.
 
 ## 🐳 Running the Project (Docker)
 
-### Build and start services
+## Build and start services
 ```bash
 docker compose up --build
 ```
-### Stop services
+## Stop services
 ```bash 
 docker compose down or docker compose stop
 ```
@@ -75,14 +75,14 @@ docker compose down or docker compose stop
 
 POST /auth/signup
 
-###Body:
+##Body:
 ```bash
 {
   "email": "user@example.com",
   "password": "password123"
 }
 ```   
-###Login
+##Login
 
 POST /auth/login
 
@@ -93,10 +93,10 @@ Response:
 }
 ```
 
-###Protected Route
+##Protected Route
 GET /me
 
-###Header:
+##Header:
 Authorization: Bearer <JWT_TOKEN>
 
 ##⏱️ Rate Limiting
