@@ -29,7 +29,7 @@ This project demonstrates real-world backend fundamentals including authenticati
 ---
 
 ## 📂 Project Structure
-
+```
 production-backend/
 ├── src/
 │ ├── routes/ # API routes (auth, protected routes)
@@ -42,7 +42,7 @@ production-backend/
 ├── .env.example
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
