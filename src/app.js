@@ -1,34 +1,30 @@
-const pool = require("./db");
-app.get("/db-test", async (req, res) => {
-    try {
-      const result = await pool.query("SELECT NOW()");
-      res.json({ time: result.rows[0] });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "DB connection failed" });
-    }
-  });
-  
-
 const express = require("express");
 const dotenv = require("dotenv");
+const meRoutes = require("./routes/me");
+
+const pool = require("./db");
+const authRoutes = require("./routes/auth");
+
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
+app.use("/", meRoutes);
 
-// Middleware to parse JSON
+// Middleware
 app.use(express.json());
 
-// Health check route
+// Health check
 app.get("/", (req, res) => {
   res.json({ message: "Backend is running" });
 });
 
+// 🔴 THIS LINE MUST EXIST
+app.use("/auth", authRoutes);
+
 const PORT = process.env.PORT || 3000;
 
-// IMPORTANT: listen on 0.0.0.0 (Docker-compatible)
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
